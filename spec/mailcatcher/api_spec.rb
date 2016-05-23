@@ -2,7 +2,7 @@ require_relative '../spec_helper'
 
 describe MailCatcher::API do
   describe 'configurable' do
-    let(:server) { 'http://a.biz.server.com:3333' }
+    let(:server) { 'http://smtp.service.consul:8080' }
 
     describe '#configure' do
       it 'accept known config options' do

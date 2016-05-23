@@ -12,6 +12,10 @@ module MailCatcher
         @collection = nil if reload == true
         @collection ||= MessageCollection.new
       end
+
+      def clear_all_messages
+        @connection.delete('/messages')
+      end
     end
   end
 end

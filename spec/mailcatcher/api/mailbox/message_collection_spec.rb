@@ -31,4 +31,11 @@ describe MailCatcher::API::Mailbox::MessageCollection do
       expect(mailbox.messages(reload: true).count).to be num
     end
   end
+
+  it 'clear all' do
+    stub_mailbox(3)
+    expect(mailbox.messages(reload: true).count).to be 3
+    mailbox.clear_all_messages
+    expect(mailbox.messages(reload: true).count).to be 0
+  end
 end
